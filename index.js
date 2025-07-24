@@ -254,12 +254,12 @@ client.on('interactionCreate', async interaction => {
                 }
     
                 const prayerTimes = {
-                    Subuh: new Date(timesForToday[0] * 1000).toLocaleTimeString(),
-                    Syuruk: new Date(timesForToday[1] * 1000).toLocaleTimeString(),
-                    Zohor: new Date(timesForToday[2] * 1000).toLocaleTimeString(),
-                    Asar: new Date(timesForToday[3] * 1000).toLocaleTimeString(),
-                    Maghrib: new Date(timesForToday[4] * 1000).toLocaleTimeString(),
-                    Isya: new Date(timesForToday[5] * 1000).toLocaleTimeString()
+                    Subuh: new Date(timesForToday[0] * 1000).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }),
+                    Syuruk: new Date(timesForToday[1] * 1000).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }),
+                    Zohor: new Date(timesForToday[2] * 1000).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }),
+                    Asar: new Date(timesForToday[3] * 1000).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }),
+                    Maghrib: new Date(timesForToday[4] * 1000).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }),
+                    Isya: new Date(timesForToday[5] * 1000).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })
                 };
     
                 const embed = new EmbedBuilder()
