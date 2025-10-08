@@ -221,6 +221,7 @@ client.on('interactionCreate', async interaction => {
                     'Bunian',
                     'Mek Kelate',
                     'Jayagrocer',
+                    'Gerai Akak CIMB',
                     'Maggi',
                     'Kat Masjid',
                     'Shower'
