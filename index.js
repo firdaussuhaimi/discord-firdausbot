@@ -214,23 +214,32 @@ client.on('interactionCreate', async interaction => {
                 });
             }, 2000); 
         } else if (commandName === 'makanmana') {
-            setTimeout(async () => {
-                const places = [
-                    'Mamak Bawah',
-                    'Mamak Nasi Ayam',
-                    'Bunian',
-                    'Mek Kelate',
-                    'Jayagrocer',
-                    'Gerai Akak CIMB',
-                    'Maggi',
-                    'Kat Masjid',
-                    'Shower'
-                ];
-                const randomPlace = places[Math.floor(Math.random() * places.length)];
-                await interaction.editReply({
-                    content: `${randomPlace} has been selected! Pergi makan kat sana!`,
-                });
-            }, 2000); 
+            const places = [
+                'Gerai Akak CIMB',
+                'Mamak Nasi Ayam',
+                'Mamak Bawah',
+                'Mek Kelate',
+                'Jayagrocer',
+                'Kat Masjid',
+                'Bunian',
+                'Shower',
+                'Maggi'
+            ];
+
+            const randomPlace = places[Math.floor(Math.random() * places.length)];
+            const spinEmojis = ['🍛', '🍔', '🍜', '🍕', '🥗', '🌯', '🍱', '🍣', '🍗'];
+
+            await interaction.editReply('🎡 Spinning the wheel...');
+
+            for (let i = 0; i < 10; i++) {
+                const spin = spinEmojis[Math.floor(Math.random() * spinEmojis.length)];
+                await interaction.editReply(`${spin} Spinning...`);
+                await new Promise(r => setTimeout(r, 300));
+            }
+
+            await new Promise(r => setTimeout(r, 700));
+
+            await interaction.editReply(`🥳 The wheel has spoken! Jom makan kat **${randomPlace}**! 🍽️`);
         } else if (commandName === 'waktusolat') {
             const location = interaction.options.getString('location'); // User input
             const code = locationCodes[location];
