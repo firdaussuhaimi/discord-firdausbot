@@ -215,12 +215,15 @@ client.on('interactionCreate', async interaction => {
             }, 2000); 
         } else if (commandName === 'makanmana') {
             const places = [
-                'Gerai Akak CIMB',
+                'Bungkus Gerai Akak CIMB',
                 'Mamak Nasi Ayam',
-                'Mamak Bawah',
+                'Mamak Nasi Kandar Sedap',
+                'Mamak Aircond',
                 'Mek Kelate',
-                'Jayagrocer',
+                'Jaya Grocer',
+                'Sushi Mentai',
                 'Kat Masjid',
+                'Selasih',
                 'Bunian',
                 'Shower',
                 'Maggi'
